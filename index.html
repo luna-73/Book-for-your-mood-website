@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book For Your Mood</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #f3e7e9 0%, #e3eeff 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #3d3d5c;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: #555;
+      font-size: 1.1rem;
+    }
+
+    .mood-selector {
+      margin: 30px 0;
+    }
+
+    select {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      background: white;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .book-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+      width: 80%;
+      max-width: 1000px;
+      margin-bottom: 50px;
+    }
+
+    .book-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .book-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .book-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .book-info {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .book-info h3 {
+      margin: 10px 0 5px;
+      color: #333;
+      font-size: 1.1rem;
+    }
+
+    .book-info a {
+      text-decoration: none;
+      color: #5c67f2;
+      font-weight: 600;
+    }
+
+    .book-info a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📚 Book For Your Mood</h1>
+    <p>Pick a mood and discover your next perfect read</p>
+  </header>
+
+  <div class="mood-selector">
+    <select id="moodSelect">
+      <option value="">-- Select Your Mood --</option>
+      <option value="happy">Happy</option>
+      <option value="sad">Sad</option>
+      <option value="motivated">Motivated</option>
+      <option value="romantic">Romantic</option>
+      <option value="mysterious">Mysterious</option>
+      <option value="adventurous">Adventurous</option>
+      <option value="calm">Calm</option>
+    </select>
+  </div>
+
+  <div class="book-container" id="bookContainer"></div>
+
+  <script>
+    const booksByMood = {
+      happy: [
+        { title: "Eleanor Oliphant Is Completely Fine", img: "https://m.media-amazon.com/images/I/81WcnNQ-TBL._AC_UF1000,1000_QL80_.jpg", link: "https://www.goodreads.com/book/show/31434883-eleanor-oliphant-is-completely-fine" },
+        { title: "The Rosie Project", img: "https://m.media-amazon.com/images/I/71D4J7Z7v+L._AC_UF1000,1000_QL80_.jpg", link: "https://www.goodreads.com/book/show/16181775-the-rosie-project" }
+      ],
+      sad: [
+        { title: "A Little Life", img: "https://m.media-amazon.com/images/I/71BCpT1q8kL._AC_UF1000,1000_QL80_.jpg", link: "https://www.goodreads.com/book/show/22822858-a-little-life" },
+        { title: "The Book Thief", img: "https://m.media-amazon.com/images/I/81eB+7+CkUL._AC_UF1000,1000_QL80_.jpg", link: "https://www.goodreads.com/book/show/19063.The_Book_Thief" }
+      ],
+      motivated: [
+        { title: "Atomic Habits", img: "https://m.media-amazon.com/images/I/91bYsX41DVL.jpg", link: "https://www.goodreads.com/book/show/40121378-atomic-habits" },
+        { title: "Can't Hurt Me", img: "https://m.media-amazon.com/images/I/71fR+H-csiL._AC_UF1000,1000_QL80_.jpg", link: "https://www.goodreads.com/book/show/41721428-can-t-hurt-me" }
+      ],
+      romantic: [
+        { title: "The Love Hypothesis", img: "https://m.media-amazon.com/images/I/71qOT5NAGxL._AC_UF1000,1000_QL80_.jpg", link: "https://www.goodreads.com/book/show/56732449-the-love-hypothesis" },
+        { title: "It Ends With Us", img: "https://m.media-amazon.com/images/I/81s0B6NYXML._AC_UF1000,1000_QL80_.jpg", link: "https://www.goodreads.com/book/show/27362503-it-ends-with-us" }
+      ],
+      mysterious: [
+        { title: "The Silent Patient", img: "https://m.media-amazon.com/images/I/71BSO2p9P+L._AC_UF1000,1000_QL80_.jpg", link: "https://www.goodreads.com/book/show/40097951-the-silent-patient" },
+        { title: "Gone Girl", img: "https://m.media-amazon.com/images/I/81af+MCATTL._AC_UF1000,1000_QL80_.jpg", link: "https://www.goodreads.com/book/show/19288043-gone-girl" }
+      ],
+      adventurous: [
+        { title: "The Hobbit", img: "https://m.media-amazon.com/images/I/91b0C2YNSrL.jpg", link: "https://www.goodreads.com/book/show/5907.The_Hobbit_or_There_and_Back_Again" },
+        { title: "Into the Wild", img: "https://m.media-amazon.com/images/I/71zH4zNKt9L._AC_UF1000,1000_QL80_.jpg", link: "https://www.goodreads.com/book/show/1845.Into_the_Wild" }
+      ],
+      calm: [
+        { title: "The Little Prince", img: "https://m.media-amazon.com/images/I/71aFt4+OTOL._AC_UF1000,1000_QL80_.jpg", link: "https://www.goodreads.com/book/show/157993.The_Little_Prince" },
+        { title: "Ikigai", img: "https://m.media-amazon.com/images/I/81l3rZK4lnL._AC_UF1000,1000_QL80_.jpg", link: "https://www.goodreads.com/book/show/40534584-ikigai" }
+      ]
+    };
+
+    const moodSelect = document.getElementById("moodSelect");
+    const bookContainer = document.getElementById("bookContainer");
+
+    moodSelect.addEventListener("change", () => {
+      const mood = moodSelect.value;
+      bookContainer.innerHTML = "";
+      if (mood && booksByMood[mood]) {
+        booksByMood[mood].forEach(book => {
+          const card = document.createElement("div");
+          card.classList.add("book-card");
+          card.innerHTML = `
+            <img src="${book.img}" alt="${book.title}">
+            <div class="book-info">
+              <h3>${book.title}</h3>
+              <a href="${book.link}" target="_blank">Read More ↗</a>
+            </div>
+          `;
+          bookContainer.appendChild(card);
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
