@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book For Your Mood</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico"> 
+
   <style>
     body {
       margin: 0;
@@ -121,27 +123,27 @@
     const booksByMood = {
       happy: [
         { title: "Eleanor Oliphant Is Completely Fine", img: "https://m.media-amazon.com/images/I/81WcnNQ-TBL._AC_UF1000,1000_QL80_.jpg", link: "https://www.goodreads.com/book/show/31434883-eleanor-oliphant-is-completely-fine" },
-        { title: "The Rosie Project", img: "https://m.media-amazon.com/images/I/71D4J7Z7v+L._AC_UF1000,1000_QL80_.jpg", link: "https://www.goodreads.com/book/show/16181775-the-rosie-project" }
+        { title: "The Rosie Project", img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1371651741i/16181775.jpg", link: "https://www.goodreads.com/book/show/16181775-the-rosie-project" }
       ],
       sad: [
-        { title: "A Little Life", img: "https://m.media-amazon.com/images/I/71BCpT1q8kL._AC_UF1000,1000_QL80_.jpg", link: "https://www.goodreads.com/book/show/22822858-a-little-life" },
-        { title: "The Book Thief", img: "https://m.media-amazon.com/images/I/81eB+7+CkUL._AC_UF1000,1000_QL80_.jpg", link: "https://www.goodreads.com/book/show/19063.The_Book_Thief" }
+        { title: "A Little Life", img: "https://m.media-amazon.com/images/I/71If19m2RXL._UF1000,1000_QL80_.jpg", link: "https://www.goodreads.com/book/show/22822858-a-little-life" },
+        { title: "The Book Thief", img: "https://m.media-amazon.com/images/I/71Ge374aXuL._UF1000,1000_QL80_.jpg", link: "https://www.goodreads.com/book/show/19063.The_Book_Thief" }
       ],
       motivated: [
         { title: "Atomic Habits", img: "https://m.media-amazon.com/images/I/91bYsX41DVL.jpg", link: "https://www.goodreads.com/book/show/40121378-atomic-habits" },
-        { title: "Can't Hurt Me", img: "https://m.media-amazon.com/images/I/71fR+H-csiL._AC_UF1000,1000_QL80_.jpg", link: "https://www.goodreads.com/book/show/41721428-can-t-hurt-me" }
+        { title: "Can't Hurt Me", img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1536184191i/41721428.jpg", link: "https://www.goodreads.com/book/show/41721428-can-t-hurt-me" }
       ],
       romantic: [
-        { title: "The Love Hypothesis", img: "https://m.media-amazon.com/images/I/71qOT5NAGxL._AC_UF1000,1000_QL80_.jpg", link: "https://www.goodreads.com/book/show/56732449-the-love-hypothesis" },
+        { title: "The Love Hypothesis", img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1747519081i/56732449.jpg", link: "https://www.goodreads.com/book/show/56732449-the-love-hypothesis" },
         { title: "It Ends With Us", img: "https://m.media-amazon.com/images/I/81s0B6NYXML._AC_UF1000,1000_QL80_.jpg", link: "https://www.goodreads.com/book/show/27362503-it-ends-with-us" }
       ],
       mysterious: [
-        { title: "The Silent Patient", img: "https://m.media-amazon.com/images/I/71BSO2p9P+L._AC_UF1000,1000_QL80_.jpg", link: "https://www.goodreads.com/book/show/40097951-the-silent-patient" },
-        { title: "Gone Girl", img: "https://m.media-amazon.com/images/I/81af+MCATTL._AC_UF1000,1000_QL80_.jpg", link: "https://www.goodreads.com/book/show/19288043-gone-girl" }
+        { title: "The Silent Patient", img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1668782119i/40097951.jpg", link: "https://www.goodreads.com/book/show/40097951-the-silent-patient" },
+        { title: "Gone Girl", img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1554086139i/19288043.jpg", link: "https://www.goodreads.com/book/show/19288043-gone-girl" }
       ],
       adventurous: [
         { title: "The Hobbit", img: "https://m.media-amazon.com/images/I/91b0C2YNSrL.jpg", link: "https://www.goodreads.com/book/show/5907.The_Hobbit_or_There_and_Back_Again" },
-        { title: "Into the Wild", img: "https://m.media-amazon.com/images/I/71zH4zNKt9L._AC_UF1000,1000_QL80_.jpg", link: "https://www.goodreads.com/book/show/1845.Into_the_Wild" }
+        { title: "Into the Wild", img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1441555551i/26238021.jpg", link: "https://www.goodreads.com/book/show/1845.Into_the_Wild" }
       ],
       calm: [
         { title: "The Little Prince", img: "https://m.media-amazon.com/images/I/71aFt4+OTOL._AC_UF1000,1000_QL80_.jpg", link: "https://www.goodreads.com/book/show/157993.The_Little_Prince" },
