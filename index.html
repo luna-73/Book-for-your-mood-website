@@ -106,7 +106,7 @@
 
   <div class="mood-selector">
     <select id="moodSelect">
-      <option value="">-- Select Your Mood --</option>
+      <option value=""> Select Your Mood </option>
       <option value="happy">Happy</option>
       <option value="sad">Sad</option>
       <option value="motivated">Motivated</option>
@@ -114,6 +114,8 @@
       <option value="mysterious">Mysterious</option>
       <option value="adventurous">Adventurous</option>
       <option value="calm">Calm</option>
+      <option value="horror">Horror</option>
+      <option value="classics">Classics</option>
     </select>
   </div>
 
@@ -148,7 +150,19 @@
       calm: [
         { title: "The Little Prince", img: "https://m.media-amazon.com/images/I/71aFt4+OTOL._AC_UF1000,1000_QL80_.jpg", link: "https://www.goodreads.com/book/show/157993.The_Little_Prince" },
         { title: "Ikigai", img: "https://m.media-amazon.com/images/I/81l3rZK4lnL._AC_UF1000,1000_QL80_.jpg", link: "https://www.goodreads.com/book/show/40534584-ikigai" }
+      ],
+      horror: [
+        {title: "The Legend of Charlie Fish", img:"http://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1684347359i/156995102.jpg", link: "https://www.goodreads.com/book/show/156995102-the-legend-of-charlie-fish"},
+        {title: "IT", img:"https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1334416842i/830502.jpg", link: "https://www.goodreads.com/book/show/830502.It"},
+        {title: "Dracula", img: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1387151694i/17245.jpg", link: "https://www.goodreads.com/book/show/17245.Dracula"}
+      ],
+      classics: [
+        {title: "1984", img: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1657781256i/61439040.jpg", link: "https://www.goodreads.com/book/show/61439040-1984" },
+        {title: "The Catcher in the Rye", img: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1398034300i/5107.jpg", link: "https://www.goodreads.com/book/show/5107.The_Catcher_in_the_Rye" }
       ]
+
+    
+
     };
 
     const moodSelect = document.getElementById("moodSelect");
