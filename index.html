@@ -7,15 +7,21 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico"> 
 
   <style>
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
       font-family: "Poppins", sans-serif;
       background: linear-gradient(135deg, #f3e7e9 0%, #e3eeff 100%);
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
     }
+
+    main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
     header {
       text-align: center;
@@ -105,15 +111,15 @@
     }
 
     footer {
-  text-align: center;
-  padding: 25px;
-  color: #555;
-  font-size: 0.95rem;
-  background: rgba(255, 255, 255, 0.4);
-  width: 100%;
-  backdrop-filter: blur(8px);
-  position: relative;
-  bottom: 0;
+   background: rgba(255, 255, 255, 0.4);
+    color: #555;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.95rem;
+    width: 100%;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    
 }
 
 footer a.github-link {
@@ -142,6 +148,8 @@ footer a.github-link {
     <p>Pick a mood and discover your next perfect read</p>
   </header>
 
+    <main>
+
   <div class="mood-selector">
     <select id="moodSelect">
       <option value=""> Select Your Mood </option>
@@ -158,7 +166,7 @@ footer a.github-link {
   </div>
 
   <div class="book-container" id="bookContainer"></div>
-
+  </main>
   <script>
     const booksByMood = {
       happy: [
